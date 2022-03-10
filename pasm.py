@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from FilesHandler import FilesHandler
+from filesHandler import FilesHandler
 
 def main():
   file_handler = FilesHandler()
@@ -10,4 +10,3 @@ def main():
 
 if __name__ == '__main__':
   main();
-
