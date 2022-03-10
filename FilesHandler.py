@@ -5,7 +5,7 @@ class FilesHandler():
   def __init__(self):
     self.extension = 'bin'
     self.in_fname = self.get_in_fname()
-    self.out_fname = self.get_out_fname()
+    self.out = []
 
   def get_in_fname(self):
     if len(sys.argv) != 2:
@@ -23,5 +23,9 @@ class FilesHandler():
 
 
   def get_file_data(self):
-    with open(self.in_fname, 'r', encoding = 'utf-8') as f:
-      return f.read().splitlines();
+    with open(self.in_fname, 'r', encoding = 'utf-8') as fi:
+      return fi.read().splitlines();
+
+  def write_out(self):
+    with open(self.get_out_fname(), 'wb') as fo:
+      fo.write(bytearray(''.join(self.out).encode('utf-8')))
